@@ -1,751 +1,1282 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>1000Prints - Gráfica e Agência de Marketing</title>
-    <meta name="author" content="Themeholy">
-    <meta name="description" content="Gráfica completa com tudo que seu negócio precisa!">
-    <meta name="keywords" content="Webteck - Technology & IT Solutions HTML Template">
-    <meta name="robots" content="INDEX,FOLLOW">
-
-    <!-- Mobile Specific Metas -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- For Resposive Device -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- For Window Tab Color -->
+    <meta name="theme-color" content="#061948">
+    <meta name="msapplication-navbutton-color" content="#061948">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#061948">
+    <title>Imprima Sua Ideia - 1000Print</title>
 
-    <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
 
-    <!--==============================
-	  Google Fonts
-	============================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- responsive style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
-    <!--==============================
-	    All CSS File
-	============================== -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- Fontawesome Icon -->
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-    <!-- Swiper Slider -->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <!-- imageRevealHover css -->
-    <link rel="stylesheet" href="assets/css/imageRevealHover.css">
-    <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Fonte Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-</head>
+    <style>
+      /* ====== Contatos no topo ====== */
+      .top-header .address {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .top-header .address i {
+        font-size: 26px;
+        color: #ff7a00; /* laranja */
+        min-width: 28px;
+        line-height: 1;
+      }
+      .top-header .address h6 {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .top-header .address-wrapper ul {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .top-header .quotes a {
+        padding: 8px 14px;
+        display: inline-block;
+      }
 
-<body class="theme-blue5">
+      /* ====== Menu sobrepondo levemente o banner (DESKTOP APENAS) ====== */
+      @media (min-width: 992px) {
+        :root { --menu-overlap: 28px; }
+        .header-one { position: relative; z-index: 50; }
+        .theme-menu-wrapper {
+          position: relative;
+          z-index: 50;
+          overflow: visible;
+          margin-bottom: calc(-1 * var(--menu-overlap));
+        }
+        .theme-menu-wrapper .bg-wrapper {
+          position: relative;
+          transform: translateY(var(--menu-overlap));
+        }
+      }
+      @media (max-width: 991.98px) {
+        .theme-menu-wrapper { margin-bottom: 0; }
+        .theme-menu-wrapper .bg-wrapper { transform: none; }
+      }
 
+      /* ====== Banner fixo ====== */
+      .fixed-hero-banner.lefty-hero{
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        min-height: 60vh;
+        background: #000;
+        z-index: 1;
+      }
+      .fixed-hero-banner.lefty-hero picture,
+      .fixed-hero-banner.lefty-hero img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
+      .fixed-hero-banner.lefty-hero .banner-caption{
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0) 100%);
+        color: #fff;
+      }
+      .fixed-hero-banner.lefty-hero .banner-caption .container{
+        padding-left: 2rem;
+        padding-right: 1rem;
+      }
 
+      /* textos do banner brancos */
+      .fixed-hero-banner.lefty-hero .banner-caption h1,
+      .fixed-hero-banner.lefty-hero .banner-caption p{
+        color: #ffffff !important;
+      }
 
-    <!--[if lte IE 9]>
-    	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
+      .fixed-hero-banner.lefty-hero .banner-caption p{
+        margin: 0 0 10px;
+        font-size: clamp(14px, 1.6vw, 18px);
+        opacity: .95;
+      }
+      .fixed-hero-banner.lefty-hero .banner-caption h1{
+        margin: 0 0 16px;
+        line-height: 1.1;
+        font-weight: 800;
+        font-size: clamp(28px, 4.5vw, 56px);
+      }
 
+      /* ===== Botão + animação de onda ===== */
+      .fixed-hero-banner.lefty-hero .theme-button-one{
+        position: relative;
+        display: inline-block;
+        background: #ff7a00;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: .2px;
+        border-radius: 10px;
+        padding: 10px 22px;
+        line-height: 1;
+        box-shadow: 0 0 0 rgba(255,122,0,0);
+        transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+        will-change: transform, box-shadow;
+        z-index: 0;
+        overflow: hidden;
+        margin-top: 28px;
+      }
+      .fixed-hero-banner.lefty-hero .theme-button-one::after{
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: -50%;
+        width: 60%;
+        height: 300%;
+        background: linear-gradient(
+          to right,
+          rgba(255,255,255,0) 0%,
+          rgba(255,255,255,0.85) 50%,
+          rgba(255,255,255,0) 100%
+        );
+        transform: rotate(20deg) translateX(-200%);
+        filter: blur(10px);
+        opacity: .35;
+        pointer-events: none;
+        animation: light-sweep 2.3s linear infinite;
+      }
+      @keyframes light-sweep{
+        0%   { transform: rotate(20deg) translateX(-200%); }
+        100% { transform: rotate(20deg) translateX(200%); }
+      }
+      .fixed-hero-banner.lefty-hero .theme-button-one:hover{
+        transform: translateY(-1px) scale(1.03);
+        box-shadow: 0 0 18px rgba(255,122,0,.45), 0 6px 20px rgba(0,0,0,.25);
+        filter: saturate(1.05);
+      }
+      .fixed-hero-banner.lefty-hero .theme-button-one:focus-visible{
+        outline: 3px solid rgba(255,122,0,.6);
+        outline-offset: 3px;
+      }
 
+      /* Helpers para mostrar/ocultar versões de texto */
+      .only-desktop{ display:none; }
+      .only-mobile{ display:block; }
+      @media (min-width: 992px){
+        .only-desktop{ display:block; }
+        .only-mobile{ display:none; }
+      }
 
-    <!--********************************
-   		Code Start From Here 
-	******************************** -->
+      /* Mobile */
+      @media (max-width: 767px){
+        .fixed-hero-banner.lefty-hero{ min-height: 48vh; }
+        .fixed-hero-banner.lefty-hero .banner-caption .container{
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        .fixed-hero-banner.lefty-hero .theme-button-one{
+          padding: 8px 16px;
+          border-radius: 8px;
+          font-size: 0.95rem;
+          margin-top: 22px;
+        }
+      }
+      /* Desktop */
+      @media (min-width: 992px){
+        .fixed-hero-banner.lefty-hero .theme-button-one{
+          padding: 12px 28px;
+          border-radius: 12px;
+          font-size: 1.03rem;
+          margin-top: 30px;
+        }
+      }
 
-    <div class="cursor"></div>
-    <div class="cursor2"></div>
+      @media (prefers-reduced-motion: reduce){
+        .fixed-hero-banner.lefty-hero .theme-button-one,
+        .fixed-hero-banner.lefty-hero .theme-button-one:hover{
+          transition: none;
+          transform: none;
+          box-shadow: none;
+        }
+        .fixed-hero-banner.lefty-hero .theme-button-one::after{
+          animation: none;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
 
+  <body>
+    <div class="main-page-wrapper">
 
-    <!--==============================
-     Preloader
-  ==============================-->
-    <div id="preloader" class="preloader ">
-        <div id="loader" class="th-preloader">
-            <div class="animation-preloader">
-                <div class="txt-loading">
-                    <span preloader-text="1" class="characters">1</span>
+      <!-- ===================================================
+          Loading Transition
+      ==================================================== -->
+      <div id="loader-wrapper">
+  <div class="loader-box">
+    <div class="loader-brand">1000 PRINTS</div>
+    <div id="loader"></div>
+    <p class="loader-text">Carregando...</p>
+  </div>
+</div>
 
-                    <span preloader-text="0" class="characters">0</span>
-
-                    <span preloader-text="0" class="characters">0</span>
-
-                    <span preloader-text="0" class="characters">0</span>
-
-                    <span preloader-text="P" class="characters">P</span>
-
-                    <span preloader-text="r" class="characters">r</span>
-
-                    <span preloader-text="i" class="characters">i</span>
-
-                    <span preloader-text="n" class="characters">n</span>
-
-                    <span preloader-text="t" class="characters">t</span>
-
-                    <span preloader-text="s" class="characters">s</span>
-                </div>
+      <!-- Header -->
+      <header class="header-one">
+        <div class="top-header">
+          <div class="container clearfix">
+            <div class="logo float-left">
+              <a href="index.html"><img src="images/logo/logo.png" alt=""></a>
             </div>
+            <div class="address-wrapper float-right">
+              <ul>
+                <li class="address">
+                  <i class="fa-solid fa-square-envelope"></i>
+                  <h6>contato@1000prints.com.br</h6>
+                </li>
+                <li class="address">
+                  <i class="fa-brands fa-square-whatsapp"></i>
+                  <h6>11 3228-0971</h6>
+                </li>
+                <li class="quotes"><a href="#">Orçamento</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
-    <!--==============================
-    Mobile Menu
-  ============================== -->
-    <div class="th-menu-wrapper">
-        <div class="th-menu-area text-center">
-            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo">
-                <a class="icon-masking" href="index.html"><span data-mask-src="assets/img/logopreta.png" class="mask-icon"></span><img src="assets/img/logopreta.png" alt="Webteck"></a>
-            </div>
 
-            <div class="th-mobile-menu">
+        <div class="theme-menu-wrapper">
+          <div class="container">
+            <div class="bg-wrapper clearfix">
+              <div class="menu-wrapper float-left">
+                <nav id="mega-menu-holder" class="clearfix">
+                  <ul class="clearfix">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li class="has-dropdown">
+  <a href="#" aria-haspopup="true" aria-expanded="false">
+    Serviços <span class="caret" aria-hidden="true"></span>
+  </a>
+  <ul class="dropdown" role="menu">
+    <li><a href="https://wa.me/551132280971?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20sobre%20Folhetos">Folhetos</a></li>
+    <li><a href="https://wa.me/551132280971?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20sobre%20Cart%C3%B5es%20de%20visita">Cartões de visita</a></li>
+    <li><a href="https://wa.me/551132280971?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20sobre%20Folders">Folders</a></li>
+    <li><a href="https://wa.me/551132280971?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20sobre%20Envelopes">Envelopes</a></li>
+    <li><a href="https://wa.me/551132280971?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20sobre%20Adesivos">Adesivos</a></li>
+    <li><a href="https://wa.me/551132280971?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20sobre%20Banners">Banners</a></li>
+    <li><a href="https://wa.me/551132280971?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20sobre%20Impress%C3%B5es">Impressões</a></li>
+    <li><a href="https://wa.me/551132280971?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20sobre%20Cat%C3%A1logos">Catálogos</a></li>
+  </ul>
+</li>
+
+                    <li><a href="#">Contato</a></li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="right-widget float-right">
                 <ul>
-                    <li >
-                        <a href="#">Início</a>
-                        
-                    </li>
-                    <li><a href="about.html">Sobre nós</a></li>
-                    <li >
-                        <a href="#">Serviços</a>
-                       
-                    </li>
-                    
-                    <li >
-                        <a href="#">Portifólio</a>
-                        
-                    </li>
-                    <li>
-                        <a href="contact.html">Contato</a>
-                    </li>
+                  <li class="social-icon">
+                    <ul>
+                      <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                  </li>
+                  <li class="search-option">
+                    <div class="dropdown">
+                      <button type="button" class="dropdown-toggle" data-toggle="dropdown"></button>
+                    </div>
+                  </li>
                 </ul>
+              </div>
             </div>
+          </div>
         </div>
-    </div><!--==============================
-	Header Area
-==============================-->
-    <header class="th-header header-layout21 onepage-nav">
-        <div class="sticky-wrapper">
-            <!-- Main Menu Area -->
-            <div class="menu-area">
-                <div class="container th-container4">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-auto">
-                            <div class="header-logo">
-                                <a class="icon-masking" href="index.html"><span data-mask-src="assets/img/logo.png" class="mask-icon"></span><img src="assets/img/logo.png" alt="Webteck"></a>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <nav class="main-menu style2 d-none d-lg-inline-block">
-                                <ul>
-                                    <li >
-                                        <a href="index.html">Início</a>
-                                        
-                                    </li>
-                                    <li><a href="#about-sec">Sobre nós</a></li>
-                                    <li><a href="#service-sec">Serviços</a></li>
-                                    <li><a href="#project-sec">Portifólio</a></li>
-                                    
-                                    <li><a href="#contact-sec">Contato</a></li>
+      </header>
 
-                                </ul>
-                            </nav>
-                            <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
-                        </div>
-                        <div class="col-auto d-xl-block d-none">
-                            <div class="header-button">
-                               
-                                <a href="https://wa.me/551132280971" target="_blank" class="th-btn style3 style-radius">
-                                    <i class="fa-brands fa-whatsapp" style="color: white; font-size: 20px; margin-right: 15px;"></i>
-                                    Contato
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header><!--==============================
-Hero Area
-==============================-->
-    <div class="th-hero-wrapper hero-22" id="hero" data-bg-src="assets/img/hero/hero_bg_22_1.jpg">
-        <div class="container th-container4">
-            <div class="row align-items-end">
-                <div class="col-xl-7">
-                    <div class="hero-style22">
-                        <h1 class="hero-title"><span class="hero-title2 text-theme"><font color="#6789ff">Quer destacar sua marca?</font> </span>
-                            <font color="#99999">  Transforme sua marca com soluções criativas e impactantes.</font>
-                        </h1>
-                        <p class="hero-text">Oferecemos serviços gráficos e digitais completos, para dar vida à sua ideia<br>e destacar sua marca no mercado.</p>
-                        <div class="btn-group">
-                            <a href="about.html" class="th-btn style8">SOLITCITAR ORÇAMENTO!</a>
-                            <a href="contact.html" class="th-btn style2 style-radius">CONHECER NOSSOS SERVIÇOS</a>
-                        </div>
-                    </div>
+      <!-- Banner fixo -->
+      <div class="fixed-hero-banner lefty-hero">
+        <picture>
+          <!-- Mobile -->
+          <source media="(max-width: 767px)" srcset="images/home/slide-1mobile.jpg">
+          <!-- Desktop -->
+          <img src="images/home/slide-1.jpg" alt="Banner Gráfica 1000Print" loading="eager">
+        </picture>
 
-                </div>
+        <div class="banner-caption">
+          <div class="container">
+            <!-- TÍTULO -->
+            <h1 class="only-desktop">
+              Torne sua marca<br>inesquecível com<br>a nossa gráfica.
+            </h1>
+            <h1 class="only-mobile">
+              Torne a sua marca<br>inesquecível com<br>a nossa gráfica.
+            </h1>
+
+            <!-- PARÁGRAFO -->
+            <p class="only-desktop">
+              Oferecemos serviços de impressão de alta<br>qualidade para ajudar sua empresa a se destacar.
+            </p>
+            <p class="only-mobile">
+              Oferecemos serviços de impressões<br>de alta qualidade para ajudar sua empresa<br>a se destacar.
+            </p>
+
+            <a href="contact.html" class="theme-button-one">FAÇA O SEU ORÇAMENTO</a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /.main-page-wrapper -->
+
+
+
+
+			
+			<!-- 
+			=============================================
+				Top Feature
+			============================================== 
+			-->
+			<div class="top-feature section-spacing">
+				<div class="top-features-slide">
+					
+				</div> <!-- /.top-features-slide -->
+			</div> <!-- /.top-feature -->
+
+
+			<!-- 
+			=============================================
+				About Company
+			============================================== 
+			-->
+			<!-- SOBRE NÓS -->
+<style>
+  /* ====== SOBRE NÓS (escopo) ====== */
+  .about-1000{
+    --navy: #0b1a48;          /* azul escuro do print */
+    --rose: #ff7a00;          /* laranja do título/CTA */
+    --icon-navy: #081a4b;     /* fundo dos ícones */
+    --icon-yellow: #ff7a00;   /* amarelo dos ícones */
+    --muted: #5e6b85;
+    --radius: 14px;
+  }
+
+  .about-1000 .text{ color:#16213b; }
+  .about-1000 .kicker{
+    display:inline-block;
+    padding-left:14px;
+    margin-bottom:10px;
+    font-size:.92rem;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--rose);
+    position:relative;
+  }
+  .about-1000 .kicker::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0;
+    width:4px; background:var(--rose);
+    border-radius:4px;
+  }
+
+  .about-1000 .title{
+    color:var(--navy);
+    font-weight:800;
+    line-height:1.1;
+    font-size: clamp(28px, 3.4vw, 48px);
+    margin:0 0 24px;
+  }
+
+  /* Bullets */
+  .about-1000 .features{ margin-top:8px; }
+  .about-1000 .feature{
+    display:flex; gap:16px; align-items:flex-start;
+    margin-bottom:26px;
+  }
+  .about-1000 .feature .ico{
+    width:70px; height:70px;
+    background:var(--icon-navy);
+    border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    flex:0 0 70px;
+    box-shadow: 0 8px 18px rgba(8,26,75,.15);
+  }
+  .about-1000 .feature .ico i{
+    color:var(--icon-yellow);
+    font-size:30px; line-height:1;
+  }
+  .about-1000 .feature h4{
+    color:var(--navy);
+    margin:2px 0 6px;
+    font-weight:800;
+    font-size: clamp(18px, 1.6vw, 24px);
+  }
+  .about-1000 .feature p{
+    margin:0; color:#3b4762; line-height:1.6;
+    max-width: 520px;
+  }
+
+  /* CTA */
+  .about-1000 .cta{
+    display:inline-block;
+    background:var(--rose);
+    color:#fff; text-decoration:none; font-weight:700;
+    padding:14px 22px;
+    border-radius:12px;
+    box-shadow: 0 10px 22px rgba(232,93,125,.25);
+    margin-top:28px;
+    transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  }
+  .about-1000 .cta:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(232,93,125,.32);
+    filter:saturate(1.04);
+  }
+
+  /* Galeria (direita) */
+  .about-1000 .gallery .g{
+    display:grid; gap:22px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "a b"
+      "c c";
+  }
+  .about-1000 .gallery .g img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    border-radius:12px;
+    box-shadow: 0 12px 20px rgba(0,0,0,.08);
+    background:#e9edf5;
+  }
+  .about-1000 .gallery .a{ grid-area:a; }
+  .about-1000 .gallery .b{ grid-area:b; }
+  .about-1000 .gallery .c{ grid-area:c; min-height: 320px; }
+
+  /* Mobile: centraliza, esconde a galeria */
+  @media (max-width: 991.98px){
+    .about-1000 .title{ text-align:left; }
+    .about-1000 .feature{ flex-direction:column; align-items:center; text-align:center; }
+    .about-1000 .feature p{ max-width: 34ch; margin-left:auto; margin-right:auto; }
+    .about-1000 .cta{ display:block; width:100%; text-align:center; }
+    .about-1000 .gallery{ display:none; }
+  }
+
+  /* >>> Desktop: mais espaço na coluna esquerda <<< */
+  @media (min-width: 992px){
+    .about-1000 .title{ margin-bottom: 40px; }     /* espaço extra antes dos ícones */
+    .about-1000 .feature{ margin-bottom: 42px; }   /* espaçamento entre os itens */
+    .about-1000 .cta{ margin-top: 44px; }          /* respiro antes do botão */
+  }
+</style>
+
+<div class="about-compnay section-spacing about-1000">
+  <div class="container">
+    <div class="row align-items-start g-4">
+      <!-- Coluna texto -->
+      <div class="col-lg-6 col-12">
+        <div class="text">
+          <span class="kicker">Sobre nós</span>
+          <h2 class="title">Transformamos suas ideias em impressões de qualidade</h2>
+
+          <div class="features">
+            <div class="feature">
+              <div class="ico"><i class="fa-solid fa-user-tie"></i></div>
+              <div>
+                <h4>Pessoal especializado</h4>
+                <p>Nossos designers gráficos especializados irão ajudá-lo a criar uma imagem de marca forte e coesa.</p>
+              </div>
             </div>
+
+            <div class="feature">
+              <div class="ico"><i class="fa-regular fa-hand-point-up"></i></div>
+              <div>
+                <h4>Tecnologia de ponta</h4>
+                <p>Trabalhamos com os melhores equipamentos do mercado para garantir a qualidade que sua empresa merece.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contato" class="cta">Como podemos te ajudar?</a>
         </div>
-        <div class="social-links">
-            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-        
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-           
+      </div>
+
+      <!-- Coluna galeria -->
+      <div class="col-lg-6 col-12">
+        <div class="gallery">
+          <div class="g">
+            <img class="a" src="images/home/magazine.png" alt="Mockup de revista">
+            <img class="b" src="images/home/cards.png" alt="Cartões de visita e papelaria">
+            <img class="c" src="images/home/printer.png" alt="Impressora de grande formato">
+          </div>
         </div>
+      </div>
     </div>
-</section><br><br>
-    <section class="service-sec14 overflow-hidden space-bottom" id="service-sec">
-        <div class="container th-container4">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 px-xl-4">
-                    <div class="title-area text-center">
-                        <span class="sub-title sub-title6">Nossos Serviços</span>
-                        <h2 class="sec-title text-white">Desde a impressão até soluções digitais</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slider-area">
-                <div class="swiper th-slider has-shadow" id="serviceSlider21" data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="service_card7">
-                                <div>
-                               <img src="assets/img/catalog.png" alt="Icon" style="width: 100px; height: auto;">
-
-                                </div><br>
-                                <h3 class="box-title"><a href="service-details.html">Catálogos
-
-</a></h3>
-                                <p class="box-text">Divulgue seus produtos com organização e qualidade gráfica profissional.</p>
-                                <a href="service-details.html" class="th-btn style2 style-radius">Solicitar Serviço</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="service_card7">
-                                <div >
-                                    <img src="assets/img/print.png" alt="Icon" style="width: 100px; height: auto;">
-                                </div><br>
-                                <h3 class="box-title"><a href="service-details.html">Impressões</a></h3>
-                                <p class="box-text">Qualidade e agilidade na impressão de materiais para todas as necessidades.</p>
-                                <a href="service-details.html" class="th-btn style2 style-radius">Solicitar Serviço</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="service_card7">
-                                <div >
-                                    <img src="assets/img/poster.png" alt="Icon" style="width: 100px; height: auto;">
-                                </div><br>
-                                <h3 class="box-title"><a href="service-details.html">Banners</a></h3>
-                                <p class="box-text">Impacto visual em grande formato para destacar sua marca ou evento.</p>
-                                <a href="service-details.html" class="th-btn style2 style-radius">Solicitar Serviço</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="service_card7">
-                                <div >
-                                    <img src="assets/img/sticker.png" alt="Icon" style="width: 100px; height: auto;">
-                                </div><br>
-                                <h3 class="box-title"><a href="service-details.html">Adesivos</a></h3>
-                                <p class="box-text">Personalização versátil para divulgação, decoração ou identificação.</p>
-                                <a href="service-details.html" class="th-btn style2 style-radius">Solicitar Serviço</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="service_card7">
-                                <div >
-                                    <img src="assets/img/envelope.png" alt="Icon" style="width: 100px; height: auto;">
-                                </div><br>
-                                <h3 class="box-title"><a href="service-details.html">Envelopes</a></h3>
-                                <p class="box-text">Profissionalismo e identidade visual desde o primeiro contato.</p>
-                                <a href="service-details.html" class="th-btn style2 style-radius">Solicitar Serviço</a>
-                            </div>
-                        </div>
-
-                        
-                        <div class="swiper-slide">
-                            <div class="service_card7">
-                                <div >
-                                    <img src="assets/img/brochure.png" alt="Icon" style="width: 100px; height: auto;">
-                                </div><br>
-                                <h3 class="box-title"><a href="service-details.html">Folders</a></h3>
-                                <p class="box-text">Divulgue informações de forma prática, dobrável e com design atrativo.</p>
-                                <a href="service-details.html" class="th-btn style2 style-radius">Solicitar Serviço</a>
-                            </div>
-                        </div>
+  </div>
+</div>
 
 
-                          <div class="swiper-slide">
-                            <div class="service_card7">
-                                <div >
-                                    <img src="assets/img/files.png" alt="Icon" style="width: 100px; height: auto;"> 
-                                </div><br>
-                                <h3 class="box-title"><a href="service-details.html">Cartões de visita</a></h3>
-                                <p class="box-text">Primeira impressão marcante com acabamento profissional e personalizado.</p>
-                                <a href="service-details.html" class="th-btn style2 style-radius">Solicitar Serviço</a>
-                            </div>
-                        </div>
+			<!-- 
+			=============================================
+				Feature Banner
+			============================================== 
+			-->
+			<!-- FEATURE BANNER -->
+<style>
+	/* ===== Loader centralizado com fundo azul escuro ===== */
+#loader-wrapper{
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #0b1a48;           /* azul escuro */
+  transition: opacity .35s ease, visibility .35s ease;
+}
 
-                        
+/* Container do conteúdo do loader */
+.loader-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;                      /* espaço entre brand, barra e texto */
+  text-align: center;
+}
 
-                 
+/* “1000 PRINTS” acima da barra */
+.loader-brand{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: .95;
+}
 
-                    </div>
-                </div>
-                <button data-slider-prev="#serviceSlider21" class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>
-                <button data-slider-next="#serviceSlider21" class="slider-arrow slider-next"><i class="far fa-arrow-right"></i></button>
-            </div>
-        </div>
-    </section><!--==============================
-About Area  
-==============================-->
-    <div class="about-sec-20 position-relative z-index-3 overflow-hidden space" id="about-sec" data-bg-src="assets/img/bg/about_bg_1.jpg">
-        <div class="container th-container4">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-xl-6">
-                    <div class="img-box23 pe-xl-5 me-xl-2">
-                        <div class="img1">
-                            <img src="assets/img/normal/about_21_1.jpg" alt="About">
-                        </div>
-                        <div class="img2">
-                            <img src="assets/img/normal/about_21_2.jpg" alt="About">
-                        </div>
-                        <div class="img3">
-                            <img src="assets/img/normal/about_21_3.jpg" alt="About">
-                        </div>
-                        <div class="th-experience">
-                            <h2 class="experience-year"><font color="#0e116c">+<span class="counter-number">459</h2>
-                            <p class="experience-text">Clientes ativos atualmente</font></p>
-                        </div>
-                        <div class="about-dots movingX"><img src="assets/img/normal/dots.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="">
-                        <div class="title-area mb-40 pe-xl-3">
-                            <span class="sub-title sub-title6" ><font color="#0e116c">Sobre nós</font></span>
-                            <h2 class="sec-title text-white">experiência no mercado gráfico com as mais modernas estratégias de marketing digital</h2>
-                            <p class="about-text"><font color="#0e116c">Somos uma gráfica inovadora com uma visão digital. Nosso foco é oferecer soluções completas para empresas que buscam se destacar no mercado, não apenas com materiais impressos de alta qualidade, mas também com estratégias de marketing digital que geram resultados reais.</font></p>
-                        </div>
-                        <div class="two-column style5 justify-content-between mb-50 list-center ms-0">
-                            <div class="checklist style13">
-                                <ul>
-                                    <li><img src="assets/img/icon/check_5.svg" alt=""><font color="#0e116c">Profissionais Especializados</font></li>
-                                    <li><img src="assets/img/icon/check_5.svg" alt=""><font color="#0e116c">Tecnologia de ponta</font></li>
-                                </ul>
-                            </div>
-                            <div class="checklist style13">
-                                <ul>
-                                    <li><img src="assets/img/icon/check_5.svg" alt=""><font color="#0e116c">Atendimento Personalizado</font></li>
-                                    <li><img src="assets/img/icon/check_5.svg" alt=""><font color="#0e116c">Resultados Comprovados</font></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="btn-group style3">
-                            
-                            <div class="about-client-box style2 mb-sm-0 mb-3">
-                                <div class="client-thumb-group">
-                                    
-                                </div>
-                                <div class="cilent-box style2">
-                                    <div class="about_review">
-                                        <i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
-                                    </div>
-                                    <h4 class="cilent-box_counter"><font color="#0e116c"><span class="counter-number">+2960</span> Clientes satisfeitos</font></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+/* Barra de progresso */
+#loader{
+  position: relative;
+  width: 240px;                   /* ajuste se quiser */
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.18);
+  overflow: hidden;
+}
+#loader::before{
+  content:"";
+  position:absolute; top:0; left:-60%;
+  width:60%; height:100%;
+  background: linear-gradient(90deg,#ff7a00 0%,#ffb066 100%);
+  animation: loader-sweep 1.6s ease-in-out infinite;
+  border-radius: inherit;
+}
+@keyframes loader-sweep{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(260%); }
+}
 
-    <div class="choose-area overflow-hidden " data-bg-src="assets/img/bg/choose_bg_2.jpg">
-        <div class="container th-container4">
-            <div class="row gy-5 align-items-end">
-                <div class="col-xl-6">
-                    <div class="space">
-                        <div class="title-area mb-20">
-                            
-                            <h2 class="sec-title text-white"><font color="#0e116c">Porque contratar uma gráfica como a 1000Prints?</font></h2>
-                        </div>
-                        <p class="sec-text3 mb-30 pe-xl-4">Contratar uma gráfica que também oferece marketing digital garante uma solução completa e integrada para sua marca. Com essa abordagem, você tem designs consistentes e estratégias eficazes, tanto online quanto offline. Confira três motivos para escolher essa combinação vantajosa.</p>
-                        <div class="choose-feature5-wrap">
-                            <div class="choose-feature5">
-                                <div class="box-icon">
-                                    <img src="assets/img/icon/iconcerto.png" alt="Icon">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="box-title"><font color="#0e116c">Solução Completa para sua Marca</font></h3>
-                                    <p class="box-text">Centralize todos os serviços, garantindo uma comunicação visual coesa e estratégias integradas.</p>
-                                </div>
-                            </div>
-                            <div class="choose-feature5">
-                                <div class="box-icon">
-                                    <img src="assets/img/icon/iconcerto.png" alt="Icon">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="box-title"><font color="#0e116c">Sinergia entre Offline e Online</font></h3>
-                                    <p class="box-text">Integre materiais impressos e campanhas digitais para um marketing mais eficaz.</p>
-                                </div>
-                            </div>
-                            <div class="choose-feature5">
-                                <div class="box-icon">
-                                    <img src="assets/img/icon/iconcerto.png" alt="Icon">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="box-title"><font color="#0e116c">Otimização de Recursos e Custos</font></h3>
-                                    <p class="box-text">Economize tempo e dinheiro com um único fornecedor que oferece tudo com consistência.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="choose-image5">
-                        <div class="img1">
-                            <img src="assets/img/normal/choose_6.png" alt="Choose">
-                        </div>
-                        <div class="choose-line">
-                            <img src="assets/img/shape/line-4.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<br><br>
-    <section class="testi-area19 overflow-hidden space" data-bg-src="assets/img/bg/testi_bg_19.jpg">
-        <div class="container th-container4">
-            <div class="row">
-                <div class="col-xl-6">
-                    <div class="video-box3 me-xl-5">
-                        <img src="assets/img/normal/video_19.jpg" alt="video">
-                        <a href="https://www.youtube.com/watch?v=XDsU7naRJQg" class="play-btn popup-video"><i class="fa-sharp fa-solid fa-play"></i></a>
-                    </div>
-                </div>
-                <div class="col-xl-6 mt-40 mt-xl-0">
-                    <div class="title-area">
-                        <span class="sub-title sub-title6">Feedbacks</span>
-                        <h2 class="sec-title text-white">Veja oque falam sobre a 1000 Prints</h2>
-                    </div>
-                    <div class="testi-card5-area slider-area">
-                        <div class="swiper th-slider" id="testiSlide19" data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"1"},"1200":{"slidesPerView":"1"}}}'>
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="testi-card5">
-                                        <div class="box-review">
-                                            <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
-                                        </div>
-                                        <p class="box-text">“A gráfica entendeu exatamente o que eu precisava e entregou um trabalho perfeito! Os materiais impressos ficaram incríveis e ajudaram a fortalecer nossa identidade visual.”</p>
-                                        <div class="box-profile">
-                                            <div class="box-avater">
-                                                <img src="assets/img/testimonial/testi_19_1.jpg" alt="testimonial">
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="box-title">Carlos Almeida</h3>
-                                                <span class="box-desig">Cliente</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testi-card5">
-                                        <div class="box-review">
-                                            <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
-                                        </div>
-                                        <p class="box-text">“Fiquei impressionado com a qualidade do material e a agilidade na entrega. O atendimento foi excepcional e a comunicação sempre clara. Com certeza vou contratar novamente.”</p>
-                                        <div class="box-profile">
-                                            <div class="box-avater">
-                                                <img src="assets/img/testimonial/testi_19_2.jpg" alt="testimonial">
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="box-title">Alex Farnandes</h3>
-                                                <span class="box-desig">Cliente</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testi-card5">
-                                        <div class="box-review">
-                                            <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
-                                        </div>
-                                        <p class="box-text">“O processo foi rápido e profissional. A qualidade da impressão superou minhas expectativas. A equipe está sempre disposta a ajudar e oferecer as melhores soluções.”</p>
-                                        <div class="box-profile">
-                                            <div class="box-avater">
-                                                <img src="assets/img/testimonial/testi_19_3.jpg" alt="testimonial">
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="box-title">Ricardo Silva</h3>
-                                                <span class="box-desig">Cliente</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+/* “Carregando...” abaixo da barra */
+.loader-text{
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: .9;
+}
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!--==============================
-Counter Area  
-==============================-->
-    <div class="space">
-        <div class="container th-container4">
-            <div class="counter-area-10">
-                <div class="row gy-5 justify-content-md-between justify-content-center">
-                    <div class="col-xl-3 col-md-6 counter-card10_wrapp">
-                        <div class="counter-card10">
-                            <div class="divider"></div>
-                            <h3 class="box-number">+<span class="counter-number">30</span></h3>
-                            <div class="media-body">
-                                <p class=" counter-text mb-n2">Anos<span> de Experiência</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 counter-card10_wrapp">
-                        <div class="counter-card10">
-                            <div class="divider"></div>
-                            <h3 class="box-number"><span class="counter-number">98</span>%</h3>
-                            <div class="media-body">
-                                <p class=" counter-text mb-n2">Taxa de Satisfação<span> </span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 counter-card10_wrapp">
-                        <div class="counter-card10">
-                            <div class="divider"></div>
-                            <h3 class="box-number">+<span class="counter-number">50</span></h3>
-                            <div class="media-body">
-                                <p class=" counter-text mb-n2">Projetos Mensais<span></span> </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 counter-card10_wrapp">
-                        <div class="counter-card10">
-                            <div class="divider"></div>
-                            <h3 class="box-number">+<span class="counter-number">2960</span></h3>
-                            <div class="media-body">
-                                <p class=" counter-text mb-n2">Clientes atendidos <span></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--==============================
-Contact Area  
-==============================-->
-    <div class="contact-area10 overflow-hidden space" id="contact-sec" data-bg-src="assets/img/bg/contact_bg_8.jpg">
-        <div class="container th-container4">
-            <div class="row gy-5">
-                <div class="col-xl-6">
-                    <div class="title-area mb-30">
-                        <span class="sub-title sub-title6">Contato</span>
-                        <h2 class="sec-title text-white">Envie um e-mail:</h2>
-                    </div>
-                    <form action="mail.php" method="POST" class="contact-form3 ajax-contact" data-bg-src="assets/img/normal/contact-shape.png">
-                        <div class="row">
-                            <div class="form-group col-12">
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
-                                <i class="fa-solid fa-user"></i>
-                            </div>
-                            <div class="form-group col-12">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
-                                <i class="fa-sharp fa-solid fa-envelope"></i>
-                            </div>
-                            <div class="form-group col-12">
-                                <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Your Message"></textarea>
-                                <i class="fa-solid fa-pen"></i>
-                            </div>
-                            <div class="col-12 form-group">
-                                <input type="checkbox" id="html">
-                                <label for="html">I Agree With Terms of Use and Privacy Policy</label>
-                            </div>
-                            <div class="form-btn mt-30 col-12">
-                                <button class="th-btn style3 w-100">Send Message</button>
-                            </div>
-                        </div>
-                        <p class="form-messages mb-0 mt-3"></p>
-                    </form>
-                </div>
-                <div class="col-xl-6 ps-xl-5">
-                    <div class="contact-map2" style="position: relative; width: 100%; overflow: hidden; border-radius: 15px;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1535464985423!2d-46.61995729999999!3d-23.5269792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce58ec524e29af%3A0x656f0956c7b03fdc!2sgr%C3%A1fica%201000prints%2C%20servi%C3%A7os%20de%20impress%C3%A3o%20off%20set%20e%20digital!5e0!3m2!1spt-BR!2sbr!4v1741208940609!5m2!1spt-BR!2sbr" 
-                        width="100%" height="100%" style="border:0; border-radius: 15px; position: absolute; top: 0; left: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    
-                    <style>
-                    /* Para dispositivos móveis */
-                    @media (max-width: 767px) {
-                        .contact-map2 {
-                            height: 0;
-                            padding-bottom: 56.25%; /* Manter a proporção 16:9 */
-                        }
-                    }
-                    
-                    /* Para dispositivos maiores (Desktop) */
-                    @media (min-width: 768px) {
-                        .contact-map2 {
-                            height: 690px; /* Definir altura fixa para desktop */
-                        }
-                    }
-                    </style>
-                    
-                </div>
-            
-    <footer class="footer-wrapper footer-layout5 footer-layout12 footer-layout21">
-        <div class="container th-container4">
-            <div class="footer-top">
-                <div class="row gx-0 align-items-center">
-                    <div class="col-xl">
-                        <div class="footer-newsletter">
-                            <div class="footer-newsletter-content">
-                                <h2 class="newsletter-title text-white">Receber todas novidades!</h2>
-                            </div>
-                            <form class="newsletter-form">
-                                <i class="fa-sharp fa-light fa-envelope"></i>
-                                <input class="form-control" type="email" placeholder="Email Address" required="">
-                                <button type="submit" class="th-btn style3">inscrever-se</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="widget-area">
-                <div class="row justify-content-between">
-                    <div class="col-md-6 col-xxl-3 col-xl-4">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title style2 text-white">Sobre nós</h3>
-                            <div class="th-widget-about style2">
-                                <p class="about-text">Somos uma gráfica inovadora com uma visão digital. Nosso foco é oferecer soluções completas para empresas que buscam se destacar no mercado</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title style2 text-white">Endereço</h3>
-                            <div class="th-widget-about">
-                                <div class="footer-info">
-                                    <p class="footer-info_text">
-                                        <a href="tel:+9159008855" class="text-inherit">+55 11 3228-0971</a>
-                                    </p>
-                                </div>
-                                <p class="footer-info"><a class="text-inherit" href="mailto:webteck@gmail.com">Contato@1000prints.com.br</a></p>
-                                <p class="footer-info">R. Pascoal Malatesta, 143 - 1 Andar - Pari, São Paulo - SP/p>
+/* Estado escondido (usado pelo seu JS) */
+#loader-wrapper.is-hidden{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title style2 text-white">Atalhos</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="about.html">Sobre nós</a></li>
-                                    <li><a href="contact.html">Serviços</a></li>
-                                    <li><a href="blog.html">Projetos</a></li>
-                                    <li><a href="contact.html">Contato</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright-wrap">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-lg-6">
-                        
-                    </div>
-                    <div class="col-lg-10 text-center text-md-end">
-                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2025 <a href="#">1000Prints</a>. All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </footer>
+  /* Cor do texto do título dentro do banner */
+  .feature-banner h3{
+    color:#fff;
+    margin:0 0 14px;
+  }
 
-    <!--********************************
-			Code End  Here 
-	******************************** -->
+  /* Botão laranja igual ao da sessão anterior (escopado só para esta seção) */
+  .feature-banner .theme-button-one{
+    position: relative;
+    display: inline-block;
+    background: #ff7a00;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: .2px;
+    border-radius: 12px;
+    padding: 12px 28px;
+    line-height: 1;
+    box-shadow: 0 0 0 rgba(255,122,0,0);
+    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+    will-change: transform, box-shadow;
+    z-index: 0;
+    overflow: hidden; /* necessário para a onda ficar “dentro” do botão */
+  }
+  /* Onda de luz desfocada (loop da esquerda para a direita) */
+  .feature-banner .theme-button-one::after{
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    width: 60%;
+    height: 300%;
+    background: linear-gradient(
+      to right,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.85) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    transform: rotate(20deg) translateX(-200%);
+    filter: blur(10px);
+    opacity: .35;
+    pointer-events: none;
+    animation: fb-light-sweep 2.3s linear infinite;
+  }
+  @keyframes fb-light-sweep{
+    0%   { transform: rotate(20deg) translateX(-200%); }
+    100% { transform: rotate(20deg) translateX(200%); }
+  }
+  .feature-banner .theme-button-one:hover{
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 0 18px rgba(255,122,0,.45), 0 6px 20px rgba(0,0,0,.25);
+    filter: saturate(1.05);
+  }
+  .feature-banner .theme-button-one:focus-visible{
+    outline: 3px solid rgba(255,122,0,.6);
+    outline-offset: 3px;
+  }
 
-    <!-- Scroll To Top -->
-    <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-            </path>
-        </svg>
+  /* Mobile-only (até 767.98px): diminuir grossura e tamanho do h3; botão um pouco menor */
+  @media (max-width: 767.98px) {
+    .feature-banner h3{
+      font-weight: 400;   /* menos grosso */
+      font-size: 18px;    /* menor no mobile */
+      line-height: 1.5;
+    }
+    .feature-banner .theme-button-one{
+      padding: 10px 16px; /* botão mais compacto no mobile */
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+  }
+
+  /* Respeita usuários que preferem menos movimento */
+  @media (prefers-reduced-motion: reduce){
+    .feature-banner .theme-button-one,
+    .feature-banner .theme-button-one:hover{
+      transition: none;
+      transform: none;
+      box-shadow: none;
+    }
+    .feature-banner .theme-button-one::after{
+      animation: none;
+      opacity: 0;
+    }
+  }
+</style>
+
+<div class="feature-banner section-spacing">
+  <div class="opacity">
+    <div class="container" style="text-align:center;">
+      <h3>Oferecemos todo tipo de serviço de gráfica para sua empresa, desde cartões de visita até impressões em grandes formatos. Se a sua empresa precisa de divulgação, nós temos a solução.</h3>
+      <br>
+      <a href="#" class="theme-button-one">Peça seu orçamento!</a>
+    </div> <!-- /.container -->
+  </div> <!-- /.opacity -->
+</div> <!-- /.feature-banner -->
+
+
+
+<section class="services-1000 section-spacing">
+  <style>
+    .services-1000{
+      --navy:#0b1a48; 
+      --accent:#e85d7d;
+      /* >>> Fonte da sessão inteira <<< */
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .services-1000 .kicker{
+      display:block;text-align:center;color:var(--accent);
+      font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    .services-1000 .title{
+      text-align:center;color:var(--navy);font-weight:800;line-height:1.1;
+      font-size:clamp(28px,4.8vw,48px);margin:0 0 32px;
+    }
+
+    .services-1000 .svc-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:56px 72px; /* row / col */ place-items:center;
+    }
+
+    /* Cada item = coluna, centralizado (imagem em cima do nome) */
+    .services-1000 .svc-item{
+      display:flex;flex-direction:column;align-items:center;
+      text-align:center;gap:14px; width:100%;
+    }
+
+    .services-1000 .svc-icon{
+      width:96px;height:96px;border-radius:50%;overflow:hidden;
+      filter:drop-shadow(0 10px 18px rgba(0,0,0,.08));
+    }
+    .services-1000 .svc-icon img{
+      width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;
+      background:#f2f4f8;
+    }
+
+    .services-1000 .svc-label{
+      color:var(--navy);font-weight:800;font-size:clamp(16px,1.6vw,22px);
+      line-height:1.2; margin:0;
+    }
+
+    .services-1000 .more{
+      text-align:center;color:var(--accent);font-weight:800;
+      font-size:clamp(18px,2.4vw,28px);margin-top:34px;
+    }
+
+    /* Tablet */
+    @media (max-width:991.98px){
+      .services-1000 .svc-grid{ grid-template-columns:repeat(2,1fr);gap:42px 36px; }
+      .services-1000 .svc-icon{ width:110px;height:110px; }
+    }
+    /* Mobile */
+    @media (max-width:575.98px){
+      .services-1000 .svc-grid{ grid-template-columns:1fr;gap:40px; }
+      .services-1000 .svc-icon{ width:140px;height:140px; }
+      .services-1000 .svc-label{ font-size:22px; }
+    }
+  </style>
+
+  <div class="container">
+    <span class="kicker">Serviços</span>
+    <h2 class="title">Alguns serviços gráficos que<br>oferecemos</h2>
+
+    <div class="svc-grid">
+      <div class="svc-item">
+        <div class="svc-icon"><img src="images/home/print-paper.png" alt="Folhetos"></div>
+        <div class="svc-label">Folhetos</div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-icon"><img src="images/home/files.png" alt="Cartões de visita"></div>
+        <div class="svc-label">Cartões de visita</div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-icon"><img src="images/home/brochure.png" alt="Folders"></div>
+        <div class="svc-label">Folders</div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-icon"><img src="images/home/envelope.png" alt="Envelopes"></div>
+        <div class="svc-label">Envelopes</div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-icon"><img src="images/home/sticker.png" alt="Adesivos"></div>
+        <div class="svc-label">Adesivos</div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-icon"><img src="images/home/poster.png" alt="Banners"></div>
+        <div class="svc-label">Banners</div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-icon"><img src="images/home/print.png" alt="Impressões"></div>
+        <div class="svc-label">Impressões</div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-icon"><img src="images/home/catalog.png" alt="Catálogos"></div>
+        <div class="svc-label">Catálogos</div>
+      </div>
     </div>
 
-    <!--==============================
-    All Js File
-============================== -->
-    <!-- Jquery -->
-    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-    <!-- Swiper Slider -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- Magnific Popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- Counter Up -->
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <!-- Circle Progress -->
-    <script src="assets/js/circle-progress.js"></script>
-    <!-- Range Slider -->
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <!-- Isotope Filter -->
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <!-- Tilt JS -->
-    <script src="assets/js/tilt.jquery.min.js"></script>
+    <div class="more">E muito mais</div>
+  </div>
+</section>
 
-    <!-- gsap -->
-    <script src="assets/js/gsap.min.js"></script>
-    <!-- ScrollTrigger -->
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/smooth-scroll.js"></script>
+		<div class="feature-banner section-spacing">
+  <div class="opacity">
+    <div class="container" style="text-align:center;">
+      <h3>Somos mais que uma gráfica; somos seus parceiros na jornada de transformar ideias em realidade. Nossa missão é oferecer soluções gráficas de alta qualidade, personalizadas para cada cliente, garantindo que sua mensagem seja transmitida de forma clara, criativa e impactante.</h3>
+      <br>
+      <a href="#" class="theme-button-one">Fale Conosco!</a>
+    </div> <!-- /.container -->
+  </div> <!-- /.opacity -->
+</div> <!-- /.feature-banner -->
 
-    <!-- Particles JS -->
-    <script src="assets/js/particles.min.js"></script>
 
-    <script src="assets/js/particles-config.js"></script>
 
-    <!-- imageRevealHover js -->
-    <script src="assets/js/imageRevealHover.js"></script>
-    <!-- Main Js File -->
-    <script src="assets/js/main.js"></script>
+<!-- SEÇÃO: Soluções Criativas e Personalizadas -->
+<section class="creative-1000 section-spacing">
+  <style>
+    .creative-1000{
+      --accent:#ff7a00;       /* laranja */
+      --navy:#0b1a48;         /* azul escuro */
+    }
+    .creative-1000 .row-creative{
+      display:grid;
+      grid-template-columns: 1.05fr 1fr;
+      align-items:center;
+      gap:56px;
+    }
 
-</body>
+    /* Texto */
+    .creative-1000 .kicker{
+      display:inline-block;
+      color:var(--accent);
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .creative-1000 .title{
+      color:var(--navy);
+      font-weight:800;
+      line-height:1.1;
+      font-size:clamp(28px,3.6vw,44px);
+      margin:0 0 18px;
+      position:relative;
+      padding-left:16px;     /* espaço para a barrinha */
+    }
+    .creative-1000 .title::before{
+      content:"";
+      position:absolute; left:0; top:.1em; bottom:.1em;
+      width:6px; border-radius:6px; background:var(--accent);
+    }
+    .creative-1000 p{
+      color:#43506b; line-height:1.7; margin:0 0 28px; max-width: 48ch;
+    }
 
+    /* Botão laranja + animação de onda */
+    .creative-1000 .btn-orange{
+      position:relative; display:inline-block; overflow:hidden;
+      background:var(--accent); color:#fff; text-decoration:none;
+      font-weight:700; letter-spacing:.2px;
+      padding:12px 26px; border-radius:12px; line-height:1;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      box-shadow:0 0 0 rgba(0,0,0,0);
+    }
+    .creative-1000 .btn-orange::after{
+      content:""; position:absolute; top:-120%; left:-50%;
+      width:60%; height:340%;
+      background:linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.85) 50%, rgba(255,255,255,0) 100%);
+      transform:rotate(18deg) translateX(-210%);
+      filter:blur(10px); opacity:.35; pointer-events:none;
+      animation:creative-light 2.3s linear infinite;
+    }
+    @keyframes creative-light{
+      0%   { transform:rotate(18deg) translateX(-210%); }
+      100% { transform:rotate(18deg) translateX(210%); }
+    }
+    .creative-1000 .btn-orange:hover{
+      transform:translateY(-1px) scale(1.02);
+      box-shadow:0 10px 24px rgba(255,122,0,.28);
+      filter:saturate(1.05);
+    }
+
+    /* Imagens sobrepostas */
+    .creative-1000 .figure-stack{ position:relative; min-height:560px; }
+    .creative-1000 .img-top,
+    .creative-1000 .img-bottom{
+      position:absolute; display:block; object-fit:cover;
+      border-radius:16px; box-shadow:0 16px 32px rgba(0,0,0,.12);
+      width: auto; height: auto;
+    }
+    .creative-1000 .img-top{
+      top:0; right:0;
+      width:min(380px, 46%);
+      aspect-ratio: 4/5;
+    }
+    .creative-1000 .img-bottom{
+      left:0; top:32%;
+      width:min(560px, 86%);
+      aspect-ratio: 16/11;
+    }
+
+    /* Esconde/mostra botões conforme dispositivo */
+    .creative-1000 .btn-desktop{ display:inline-block; }
+    .creative-1000 .btn-mobile{ display:none; }
+
+    /* Responsivo (mobile) */
+    @media (max-width: 991.98px){
+      .creative-1000 .row-creative{
+        grid-template-columns: 1fr;
+        gap:24px;
+      }
+      .creative-1000 .figure-stack{ min-height:auto; }
+      .creative-1000 .img-top,
+      .creative-1000 .img-bottom{
+        position:static; width:100%; aspect-ratio:auto; margin-bottom:18px;
+      }
+      .creative-1000 p{ max-width: none; }
+      .creative-1000 .btn-orange{ padding:10px 20px; border-radius:10px; }
+
+      /* Aqui está a troca: esconde o botão do texto e mostra um abaixo das imagens */
+      .creative-1000 .btn-desktop{ display:none; }
+      .creative-1000 .btn-mobile{
+        display:inline-block;
+        margin: 6px auto 0;           /* centralizado abaixo das imagens */
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .creative-1000 .btn-orange::after{ animation:none; opacity:0; }
+      .creative-1000 .btn-orange{ transition:none; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="row-creative">
+      <!-- Coluna esquerda (texto) -->
+      <div class="col-text">
+        <span class="kicker">Qualidade Inigualável</span>
+        <h2 class="title">Soluções Criativas e<br>Personalizadas</h2>
+        <p>Aqui, valorizamos a arte do detalhe e a satisfação do cliente acima de tudo.
+           Venha descobrir como podemos ajudar a elevar a imagem da sua marca!</p>
+        <!-- Botão para DESKTOP (fica nesta coluna) -->
+        <a href="#contato" class="btn-orange btn-desktop">VAMOS CONVERSAR?</a>
+      </div>
+
+      <!-- Coluna direita (imagens) -->
+      <div class="col-media">
+        <div class="figure-stack">
+          <!-- Troque pelos seus arquivos/imagens -->
+          <img class="img-top" src="images/home/image1.png" alt="Profissional de design revisando prova gráfica">
+          <img class="img-bottom" src="images/home/image2.png" alt="Operador em impressora industrial preparando impressão">
+        </div>
+        <!-- Botão para MOBILE (abaixo das imagens) -->
+        <a href="#contato" class="btn-orange btn-mobile">VAMOS CONVERSAR?</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+		
+			
+<div class="theme-counter section-spacing">
+  <div class="container">
+    <div class="bg">
+      <h6>Nossos números</h6>
+      <h2>Alguns dados sobre a nossa gráfica</h2>
+
+      <div class="cunter-wrapper">
+        <div class="row">
+          <div class="col-md-3 col-6">
+            <div class="single-counter-box">
+              <div class="number">
+                <span class="timer" data-from="0" data-to="12" data-speed="1200" data-refresh-interval="5">0</span>+
+              </div>
+              <p>Anos de mercado</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6">
+            <div class="single-counter-box">
+              <div class="number">
+                <span class="timer" data-from="0" data-to="98" data-speed="1200" data-refresh-interval="5">0</span>%
+              </div>
+              <p>Satisfação dos clientes</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6">
+            <div class="single-counter-box">
+              <div class="number">
+                <span class="timer" data-from="0" data-to="53" data-speed="1200" data-refresh-interval="5">0</span>k
+              </div>
+              <p>Pedidos entregues</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6">
+            <div class="single-counter-box">
+              <div class="number">
+                <span class="timer" data-from="0" data-to="24" data-speed="1200" data-refresh-interval="5">0</span>
+              </div>
+              <p>Profissionais na equipe</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contato" class="theme-button-one">Peça seu orçamento!</a>
+    </div>
+  </div>
+</div>
+
+		
+			<!--
+			=====================================================
+				Footer
+			=====================================================
+			-->
+			<footer class="footer-1000">
+  <style>
+    .footer-1000{
+      /* cores */
+      --navy:#061948;
+      --orange:#ff7a00;
+      --muted:#cfd7ef;
+      background:var(--navy);
+      color:#eaf0ff;
+      /* FORÇA Montserrat no footer inteiro */
+      font-family:'Montserrat',sans-serif !important;
+    }
+    .footer-1000 .container{padding:56px 16px 22px}
+    .footer-1000 a{color:#eaf0ff;text-decoration:none}
+    .footer-1000 a:hover{color:#fff;text-decoration:underline}
+
+    /* TITULOS – agora sempre brancos */
+    .footer-1000 h6{
+      color:#ffffff !important;
+      font-size:16px;
+      font-weight:800;
+      margin:0 0 16px;
+      letter-spacing:.02em;
+    }
+
+    .footer-1000 ul{list-style:none;margin:0;padding:0}
+    .footer-1000 li+li{margin-top:12px}
+
+    /* GRID */
+    .footer-1000 .grid{
+      display:grid; gap:36px;
+      grid-template-columns:1.2fr .8fr .9fr 1.1fr;
+      align-items:start;
+    }
+
+    /* COL 1 – LOGO MENOR + pagamentos */
+    .footer-1000 .brand .logo{
+      width:140px;          /* <<< menor */
+      max-width:100%;
+      display:block;
+    }
+    .footer-1000 .pay-badges{display:flex; gap:12px; margin-top:18px}
+    .footer-1000 .pay-badges i{
+      font-size:22px; color:#fff; background:rgba(255,255,255,.08);
+      padding:8px 10px; border-radius:8px; line-height:1;
+      box-shadow:0 6px 16px rgba(0,0,0,.12);
+    }
+
+    /* Contato */
+    .footer-1000 .contact li{display:flex; gap:10px; align-items:center}
+    .footer-1000 .contact i{color:var(--orange)}
+
+    /* Divider + bottom */
+    .footer-1000 hr{
+      border:none; border-top:1px solid rgba(255,255,255,.12);
+      margin:32px 0 18px;
+    }
+    .footer-1000 .bottom{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; color:var(--muted); font-size:14px;
+    }
+    .footer-1000 .social{display:flex; gap:18px}
+    .footer-1000 .social a{
+      width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;
+      border-radius:10px; background:rgba(255,255,255,.08);
+    }
+    .footer-1000 .social a:hover{background:rgba(255,255,255,.16)}
+
+    /* Responsivo */
+    @media (max-width:991.98px){
+      .footer-1000 .grid{grid-template-columns:1fr}
+      .footer-1000 .brand .logo{width:120px} /* menor no mobile também */
+      .footer-1000 .bottom{flex-direction:column; align-items:flex-start}
+    }
+  </style>
+
+  <div class="container">
+    <div class="grid">
+      <!-- COLUNA 1: Logo + pagamentos -->
+      <div class="brand">
+        <img class="logo" src="images/logo/logo.png" alt="1000 Prints">
+        <div class="pay-badges" aria-label="Formas de pagamento">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-amex" title="Amex"></i>
+          <i class="fa-brands fa-cc-jcb" title="JCB"></i>
+          <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+        </div>
+      </div>
+
+      <!-- COLUNA 2: Links -->
+      <div>
+        <h6>Links</h6>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUNA 3: Outras páginas -->
+      <div>
+        <h6>Outras páginas</h6>
+        <ul>
+          <li><a href="#trabalhe-conosco">Trabalhe conosco</a></li>
+          <li><a href="#privacidade">Política de privacidade</a></li>
+          <li><a href="#termos">Termos de uso</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUNA 4: Contato -->
+      <div>
+        <h6>Contato</h6>
+        <ul class="contact">
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+551132280971">+55 11 3228 0971</a></li>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contato@1000prints.com.br">contato@1000prints.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="bottom">
+      <div>1000 prints © 2025.</div>
+      <div class="social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	        
+
+	        <!-- Scroll Top Button -->
+			<button class="scroll-top tran3s">
+				<i class="fa fa-angle-up" aria-hidden="true"></i>
+			</button>
+			
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    	<!-- jQuery -->
+		<script src="vendor/jquery.2.2.3.min.js"></script>
+		<!-- Popper js -->
+		<script src="vendor/popper.js/popper.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<!-- Camera Slider -->
+		<script src='vendor/Camera-master/scripts/jquery.mobile.customized.min.js'></script>
+	    <script src='vendor/Camera-master/scripts/jquery.easing.1.3.js'></script> 
+	    <script src='vendor/Camera-master/scripts/camera.min.js'></script>
+	    <!-- menu  -->
+		<script src="vendor/menu/src/js/jquery.slimmenu.js"></script>
+		<!-- WOW js -->
+		<script src="vendor/WOW-master/dist/wow.min.js"></script>
+		<!-- owl.carousel -->
+		<script src="vendor/owl-carousel/owl.carousel.min.js"></script>
+		<!-- js count to -->
+		<script src="vendor/jquery.appear.js"></script>
+		<script src="vendor/jquery.countTo.js"></script>
+		<!-- Fancybox -->
+		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+
+		<!-- Theme js -->
+		<script src="js/theme.js"></script><script>
+(function () {
+  var wrapper = document.getElementById('loader-wrapper');
+  if (!wrapper) return;
+
+  // trava o scroll enquanto o loader está visível
+  var oldOverflow = document.body.style.overflow;
+  document.body.style.overflow = 'hidden';
+
+  function hideLoader() {
+    if (!wrapper) return;
+    wrapper.classList.add('is-hidden');
+    document.body.style.overflow = oldOverflow || '';
+    // remove do DOM após a transição
+    setTimeout(function () {
+      if (wrapper && wrapper.parentNode) wrapper.parentNode.removeChild(wrapper);
+      wrapper = null;
+    }, 400);
+  }
+
+  // quando tudo carregar, some
+  window.addEventListener('load', hideLoader);
+
+  // fallback (caso algo demore demais): força sumir em 3s
+  setTimeout(hideLoader, 3000);
+})();
+</script>
+
+		</div> <!-- /.main-page-wrapper -->
+		<script>
+(function(){
+  // WhatsApp destino + texto padrão
+  var waPhone = '551132280971';
+  var msg = 'Olá, vim através do site e gostaria de um orçamento!';
+  var waLink = 'https://wa.me/' + waPhone + '?text=' + encodeURIComponent(msg);
+
+  // Botões/CTAs que devem apontar para o WhatsApp
+  var selectors = [
+    'a.theme-button-one', // botões laranja
+    'a.cta',              // "Como podemos te ajudar?"
+    'a.btn-orange',       // "VAMOS CONVERSAR?"
+    'a.btn-desktop',      // variação desktop
+    'a.btn-mobile',       // variação mobile
+    '.quotes a'           // "Orçamento" no topo
+  ].join(',');
+
+  function isExcluded(a){
+    // não mexe no botão de subir a página nem nos ícones sociais
+    if (a.classList.contains('scroll-top')) return true;
+    if (a.closest('.social')) return true;
+    if (a.closest('footer .social')) return true;
+    return false;
+  }
+
+  function apply(){
+    document.querySelectorAll(selectors).forEach(function(a){
+      if (isExcluded(a)) return;
+      a.href = waLink;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.setAttribute('aria-label','Abrir WhatsApp: solicitar orçamento');
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', apply);
+  } else {
+    apply();
+  }
+})();
+</script>
+
+	</body>
 </html>
