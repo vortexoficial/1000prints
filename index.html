@@ -309,39 +309,255 @@
         </div>
       </header>
 
-      <!-- Banner fixo -->
-      <div class="fixed-hero-banner lefty-hero">
-        <picture>
-          <!-- Mobile -->
-          <source media="(max-width: 767px)" srcset="images/home/slide-1mobile.jpg">
-          <!-- Desktop -->
-          <img src="images/home/slide-1.jpg" alt="Banner Gráfica 1000Print" loading="eager">
-        </picture>
+     <!-- =======================
+     HERO CAROUSEL (slide push, 3x)
+======================= -->
+<style>
+  :root{
+    --hc-min: 420px;
+    --hc-ideal: 58vh;
+    --hc-max: 620px;
+    --hc-bg: #061948;
 
-        <div class="banner-caption">
-          <div class="container">
-            <!-- TÍTULO -->
-            <h1 class="only-desktop">
-              Torne sua marca<br>inesquecível com<br>a nossa gráfica.
-            </h1>
-            <h1 class="only-mobile">
-              Torne a sua marca<br>inesquecível com<br>a nossa gráfica.
-            </h1>
+    /* Desktop/tablet: mostra a imagem inteira (pode sobrar um pouco) */
+    --hc-fit: contain;
 
-            <!-- PARÁGRAFO -->
-            <p class="only-desktop">
-              Oferecemos serviços de impressão de alta<br>qualidade para ajudar sua empresa a se destacar.
-            </p>
-            <p class="only-mobile">
-              Oferecemos serviços de impressões<br>de alta qualidade para ajudar sua empresa<br>a se destacar.
-            </p>
+    --hc-cap-max: 1240px;
+  }
 
-            <a href="contact.html" class="theme-button-one">FAÇA O SEU ORÇAMENTO</a>
+  /* Wrapper */
+  .hc { position:relative !important; width:100% !important;
+        height:clamp(var(--hc-min), var(--hc-ideal), var(--hc-max)) !important;
+        background:var(--hc-bg) !important; overflow:hidden !important; }
+
+  /* Viewport + trilho deslizante */
+  .hc-viewport { position:relative !important; height:100% !important; overflow:hidden !important; }
+  .hc-track {
+    display:flex !important;
+    height:100% !important;
+    will-change:transform !important;
+    transition: transform .6s ease !important;
+    touch-action: pan-y !important; /* permite arrastar na horizontal */
+  }
+
+  /* Slide */
+  .hc-slide {
+    min-width:100% !important; height:100% !important;
+    position:relative !important; display:grid !important;
+    grid-template-areas: "stack" !important; place-items:stretch !important;
+    background:var(--hc-bg) !important;
+  }
+
+  /* Mídia */
+  .hc-media { grid-area:stack !important; z-index:0 !important; margin:0 !important; }
+  .hc-media picture, .hc-media img {
+    display:block !important; width:100% !important; height:100% !important;
+    object-fit:var(--hc-fit) !important; object-position:center !important;
+  }
+
+  /* Legenda por cima */
+  .hc-caption { grid-area:stack !important; z-index:3 !important;
+                display:flex !important; align-items:center !important; }
+  .hc-caption-inner { max-width:var(--hc-cap-max) !important; width:100% !important;
+                      margin:0 auto !important; padding:0 24px !important; }
+  .hc-title { color:#fff !important; margin:0 0 14px !important;
+              line-height:1.15 !important; font-size:clamp(22px,4.4vw,48px) !important;
+              text-shadow:0 2px 12px rgba(0,0,0,.35) !important; }
+  .hc-text  { color:#fff !important; margin:0 0 18px !important; max-width:46ch !important;
+              line-height:1.55 !important; font-size:clamp(14px,1.55vw,18px) !important; }
+
+  /* Botão fininho + brilho */
+  .hc-btn.theme-button-one{
+    font-size: clamp(14px, 1.4vw, 16px) !important;
+    padding: 4px 18px !important;
+    border-radius: 8px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display:inline-flex !important; align-items:center !important; justify-content:center !important;
+    transition: transform .25s ease, box-shadow .25s ease !important;
+    z-index:0 !important;
+  }
+  .hc-btn.theme-button-one:hover{
+    transform: translateZ(0) scale(1.02);
+    box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  }
+  .hc-btn.theme-button-one::before{
+    content:""; position:absolute; top:0; left:-60%;
+    width:50%; height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.40), transparent);
+    filter: blur(6px); transform: skewX(-20deg);
+    animation: lightMove 3s linear infinite; z-index:1; pointer-events:none;
+  }
+  .hc-btn.theme-button-one > span{ position:relative; z-index:2; }
+  @keyframes lightMove{ 0%{left:-60%;} 100%{left:120%;} }
+  @media (prefers-reduced-motion: reduce){
+    .hc-btn.theme-button-one::before{ animation:none; }
+    .hc-btn.theme-button-one{ transition:none; }
+  }
+
+  /* Dots */
+  .hc-dots { position:absolute !important; left:50% !important; bottom:18px !important;
+             transform:translateX(-50%) !important; display:flex !important; gap:10px !important;
+             z-index:5 !important; list-style:none !important; margin:0 !important; padding:0 !important; }
+  .hc-dots button { width:12px !important; height:12px !important; border-radius:999px !important;
+                    border:none !important; background:rgba(255,255,255,.55) !important; cursor:pointer !important; }
+  .hc-dots li.hc-active button { background:#fff !important; transform:scale(1.15) !important; }
+
+  /* Mobile: sem faixas (cover) e título maior */
+  @media (max-width: 575px){
+    :root{ --hc-min: 360px; --hc-ideal: 52vh; --hc-max: 520px; }
+    .hc { --hc-fit: cover; }   /* preenche no mobile */
+    .hc-caption-inner{ padding-left:16px !important; padding-right:16px !important; }
+    .hc-title{ font-size: clamp(30px, 8vw, 38px) !important; line-height:1.25 !important; }
+  }
+</style>
+
+<div class="hc" role="region" aria-roledescription="carousel" aria-label="Banners principais">
+  <div class="hc-viewport" aria-live="polite">
+    <div class="hc-track">
+      <!-- Slide 1 -->
+      <section class="hc-slide" data-index="0">
+        <figure class="hc-media">
+          <picture>
+            <source media="(max-width: 767px)" srcset="images/home/slide-1mobile.jpg">
+            <img src="images/home/slide-1.jpg" alt="Banner Gráfica 1000Print">
+          </picture>
+        </figure>
+        <div class="hc-caption">
+          <div class="hc-caption-inner">
+            <h1 class="hc-title">Torne sua marca<br>inesquecível com<br>a nossa gráfica.</h1>
+            <p class="hc-text">Oferecemos serviços de impressões<br>de alta qualidade para ajudar<br> sua empresa a se destacar.</p>
+            <a href="contact.html" class="hc-btn theme-button-one"><span>FAÇA O SEU ORÇAMENTO</span></a>
           </div>
         </div>
-      </div>
+      </section>
 
-    </div> <!-- /.main-page-wrapper -->
+      <!-- Slide 2 -->
+      <section class="hc-slide" data-index="1">
+        <figure class="hc-media">
+          <picture>
+            <source media="(max-width: 767px)" srcset="images/home/slide-1mobile2.jpg">
+            <img src="images/home/slide-2.jpg" alt="Banner Gráfica 1000Print">
+          </picture>
+        </figure>
+        <div class="hc-caption">
+          <div class="hc-caption-inner">
+            <h1 class="hc-title">Impulsione sua<br>marca com o nosso<br>marketing digital.</h1>
+            <p class="hc-text">Criação de landing pages, gestão de<br>redes sociais, anúncios e tudo que sua<br>empresa precisa para crescer.</p>
+            <a href="contact.html" class="hc-btn theme-button-one"><span>SOLICITAR UMA ESTRATÉGIA</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 3 -->
+      <section class="hc-slide" data-index="2">
+        <figure class="hc-media">
+          <picture>
+            <source media="(max-width: 767px)" srcset="images/home/slide-1mobile3.jpg">
+            <img src="images/home/slide-3.jpg" alt="Banner Gráfica 1000Print">
+          </picture>
+        </figure>
+        <div class="hc-caption">
+          <div class="hc-caption-inner">
+            <h1 class="hc-title">Dê vida às suas<br>ideias com nossos<br>criativos profissionais.</h1>
+            <p class="hc-text">Artes para impressos e redes sociais, edição de<br>vídeos, social media, criação de logomarcas<br>e identidade visual completa.</p>
+            <a href="contact.html" class="hc-btn theme-button-one"><span>QUERO UM DESIGN DE IMPACTO</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <ul class="hc-dots" role="tablist" aria-label="Seleção de slide">
+    <li class="hc-active" role="presentation"><button type="button" aria-label="Slide 1"></button></li>
+    <li role="presentation"><button type="button" aria-label="Slide 2"></button></li>
+    <li role="presentation"><button type="button" aria-label="Slide 3"></button></li>
+  </ul>
+</div>
+
+<script>
+  (function () {
+    const root   = document.querySelector('.hc');
+    const track  = root.querySelector('.hc-track');
+    const slides = Array.from(root.querySelectorAll('.hc-slide'));
+    const dots   = Array.from(root.querySelectorAll('.hc-dots li'));
+    const total  = slides.length;
+
+    let i = 0, timer = null, interval = 6000;
+
+    // Render
+    function render() {
+      track.style.transform = `translateX(${-i * 100}%)`;
+      dots.forEach((d, idx) => d.classList.toggle('hc-active', idx === i));
+    }
+
+    // Navegação
+    function show(n){ i = (n + total) % total; render(); }
+    function next(){ show(i + 1); }
+    function prev(){ show(i - 1); }
+
+    // Auto-play
+    function start(){ stop(); timer = setInterval(next, interval); }
+    function stop(){ if (timer) clearInterval(timer), timer = null; }
+
+    // Dots
+    dots.forEach((dot, idx) => dot.querySelector('button')
+      .addEventListener('click', () => { show(idx); start(); }));
+
+    // Teclado
+    root.setAttribute('tabindex', '0');
+    root.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { next(); start(); }
+      if (e.key === 'ArrowLeft')  { prev(); start(); }
+    });
+
+    // Drag / Swipe (touch e mouse)
+    let isDown = false, startX = 0, currentX = 0;
+    let width = () => root.clientWidth;
+
+    function onDown(clientX){
+      isDown = true; startX = clientX; currentX = clientX;
+      stop();
+      track.style.transition = 'none';
+    }
+    function onMove(clientX){
+      if (!isDown) return;
+      currentX = clientX;
+      const dx = currentX - startX;
+      const offset = (-i * width() + dx);
+      track.style.transform = `translateX(${offset}px)`;
+    }
+    function onUp(){
+      if (!isDown) return;
+      const dx = currentX - startX;
+      const threshold = Math.min(120, width() * 0.18);
+      track.style.transition = 'transform .6s ease';
+      if (dx <= -threshold) next();
+      else if (dx >= threshold) prev();
+      else render();
+      isDown = false; start();
+    }
+
+    // Eventos pointer/touch/mouse
+    root.addEventListener('pointerdown', e => onDown(e.clientX));
+    root.addEventListener('pointermove',  e => onMove(e.clientX));
+    root.addEventListener('pointerup',    onUp);
+    root.addEventListener('pointerleave', () => { if(isDown) onUp(); });
+
+    // Compatibilidade touch antiga (opcional)
+    root.addEventListener('touchstart', e => onDown(e.touches[0].clientX), {passive:true});
+    root.addEventListener('touchmove',  e => onMove(e.touches[0].clientX),  {passive:true});
+    root.addEventListener('touchend',   onUp);
+
+    // Inicia
+    render(); start();
+
+    // Recalcula na resize
+    window.addEventListener('resize', () => { render(); });
+  })();
+</script>
+
 
 
 
