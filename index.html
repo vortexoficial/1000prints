@@ -399,9 +399,18 @@
   .hc-dots { position:absolute !important; left:50% !important; bottom:18px !important;
              transform:translateX(-50%) !important; display:flex !important; gap:10px !important;
              z-index:5 !important; list-style:none !important; margin:0 !important; padding:0 !important; }
-  .hc-dots button { width:12px !important; height:12px !important; border-radius:999px !important;
-                    border:none !important; background:rgba(255,255,255,.55) !important; cursor:pointer !important; }
-  .hc-dots li.hc-active button { background:#fff !important; transform:scale(1.15) !important; }
+  .hc-dots button { 
+    width:6px !important; 
+    height:6px !important; 
+    border-radius:999px !important;
+    border:none !important; 
+    background:rgba(255,255,255,.55) !important; 
+    cursor:pointer !important; 
+  }
+  .hc-dots li.hc-active button { 
+    background:#fff !important; 
+    transform:scale(1.15) !important; 
+  }
 
   /* Mobile: sem faixas (cover) e título maior */
   @media (max-width: 575px){
@@ -409,6 +418,12 @@
     .hc { --hc-fit: cover; }   /* preenche no mobile */
     .hc-caption-inner{ padding-left:16px !important; padding-right:16px !important; }
     .hc-title{ font-size: clamp(30px, 8vw, 38px) !important; line-height:1.25 !important; }
+
+    /* Bolinhas ainda menores no mobile */
+    .hc-dots button {
+      width:4px !important;
+      height:4px !important;
+    }
   }
 </style>
 
